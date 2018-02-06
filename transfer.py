@@ -55,6 +55,9 @@ import argparse
 from keras.applications import vgg19
 from keras import backend as K
 
+import keras; print(keras.__version__)
+
+
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
                     help='Path to the image to transform.')
@@ -71,7 +74,7 @@ parser.add_argument('--style_weight', type=float, default=1.0, required=False,
 parser.add_argument('--tv_weight', type=float, default=1.0, required=False,
                     help='Total Variation weight.')
 
-glitch_folder_name = "D:/Downloads/Work/rips/reddit_sub_glitch_art/"
+glitch_folder_name = "D:\Dropbox\PhD\Administration/rips/reddit_sub_glitch_art/"
 
 import os
 
@@ -87,7 +90,7 @@ glitch_fns = getFns(glitch_folder_name)
 import random
 
 
-nice_folder_names = "D:/Downloads/Work/rips/reddit_sub_EarthPorn/"
+nice_folder_names = "D:\Dropbox\PhD\Administration/rips/reddit_sub_EarthPorn/"
 
 nice_fns = getFns(nice_folder_names)
 
