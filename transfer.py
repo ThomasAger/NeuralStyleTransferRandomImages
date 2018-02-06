@@ -71,7 +71,7 @@ parser.add_argument('--style_weight', type=float, default=1.0, required=False,
 parser.add_argument('--tv_weight', type=float, default=1.0, required=False,
                     help='Total Variation weight.')
 
-glitch_folder_name = "D:/Downloads/Work/rips/reddit_sub_glitch_art/"
+glitch_folder_name = "D:\PhD\Code\glitch\lit styles/"
 
 import os
 
@@ -87,7 +87,7 @@ glitch_fns = getFns(glitch_folder_name)
 import random
 
 
-nice_folder_names = "D:/Downloads/Work/rips/reddit_sub_EarthPorn/"
+nice_folder_names = "D:\PhD\Code\glitch\lit images/"
 
 nice_fns = getFns(nice_folder_names)
 
@@ -131,8 +131,12 @@ for f in nice_fns:
 
     # dimensions of the generated picture.
     width, height = load_img(base_image_path).size
-    img_nrows = 300
-    img_ncols = int(width * img_nrows / height)
+    img_nrows = height
+    img_ncols = width
+
+    if img_nrows > 1080:
+        img_nrows = 1080
+        img_ncols = int(width * img_nrows / height)
 
     # util function to open, resize and format pictures into appropriate tensors
 
